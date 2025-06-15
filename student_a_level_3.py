@@ -1,127 +1,110 @@
-import pyhtml
-
 def get_page_html(form_data):
-    print("About to return home page...")
-    
-    page_html = """<!DOCTYPE html>
+    print("About to return page 2")
+
+    page_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weather Insights Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Station Comparison</title>
     <style>
-        body {
+        body {{
             font-family: Arial, sans-serif;
-            margin: 10px;
-            background-color: #f9f9f9;
-        }
-        header {
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }}
+        header {{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 1px;
-        }
-        header h1 {
-            color: black;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }}
+        .nav-top {{
             display: flex;
-            align-items: center;
-            font-size: 2rem;
-        }
-        header h1 img {
-            height: 40px;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-        nav a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        .content-container {
-            margin-left: 80px;
-            margin-right: 80px;
-        }
-        .section {
-            margin-top: 30px;
-        }
-        .section h2 {
-            color: #222;
-            border-bottom: 0px solid #ccc;
-            padding-bottom: 5px;
-        }
-        .container {
+            gap: 15px;
+        }}
+        .nav-bar {{
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .box {
-            flex: 1;
+            justify-content: space-around;
+            background-color: #ddd;
+            padding: 10px;
+        }}
+        .login-signup {{
+            display: flex;
+            gap: 10px;
+        }}
+        .container {{
+            padding: 20px;
+        }}
+        form {{
             background-color: #fff;
             padding: 20px;
-            border: 1px solid #bbb;
             border-radius: 5px;
-            min-width: 300px;
-        }
-        .table-container {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            max-width: 600px;
-            font-size: 13px;
-        }
-        table {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }}
+        label, select, input, button {{
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
             width: 100%;
+        }}
+        button {{
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }}
+        h2 {{
+            color: #003366;
+        }}
+        table {{
             border-collapse: collapse;
-            font-size: 13px;
-        }
-        th, td {
-            padding: 6px 10px;
-            border: 1px solid #bbb;
-            text-align: left;
-        }
-        th {
-            background-color: #f5f5f5;
-            position: sticky;
-            top: 0;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .image-box {
-            flex: 1;
+            width: 100%;
+            margin-top: 20px;
+            background-color: #fff;
+        }}
+        th, td {{
+            border: 1px solid #ccc;
+            padding: 10px;
             text-align: center;
-            min-width: 300px;
-        }
-        .image-box img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
+        }}
+        th {{
+            background-color: #cce5ff;
+        }}
+        .selected {{
+            font-weight: bold;
+            color: green;
+        }}
     </style>
 </head>
 <body>
+
     <header>
-        <h1>
-            <img src="https://logodix.com/logo/1158014.png" alt="AUSTRALIAN WEATHER Logistics" style="width: 100px; height: auto;">
-            AUSTRALIAN WEATHER Logistics
-        </h1>
-        <nav class="nav-bar">
-            <a href="/">Home</a>
-            <a href="/page2a">Page 1B</a>
-            <a href="/page3a">Page 1C</a>
-            <a href="/page1b">Page 2A</a>
-            <a href="/page2b">Page 2B</a>
-            <a href="/page3b">Page 2C</a>
-        </nav>
+        <div class="nav-top">
+            <strong><img src="images/pic4.png" style="width: 20%; height: auto;"></strong>
+        </div>
+        <div class="login-signup">
+            <button>LOG IN</button>
+            <button>SIGN UP</button>
+        </div>
     </header>
 
-    <div class="section">
-        <h2>Weather Station Analyser:</h2>
+    <nav class="nav-bar">
+        <p><a href="/">Home</a></p>
+        <p><a href="/page2a">Go to page 2A</a></p>
+        <p><a href="/page3a">Go to page 3A</a></p>
+        <p><a href="/page1b">Go to page 1B</a></p>
+        <p><a href="/page2b">Go to page 2B</a></p>
+        <p><a href="/page3b">Go to page 3B</a></p>
+    </nav>
+
+    <div class="container">
+        <h2>Weather Station Similarity Finder</h2>
+
         <form action="/process_query" method="POST">
             <label for="reference_station">Reference Weather Station:</label>
             <select id="reference_station" name="reference_station">
@@ -129,38 +112,64 @@ def get_page_html(form_data):
                 <option value="Ballarat">Ballarat</option>
                 <option value="Bendigo">Bendigo</option>
             </select>
-            <br>
-            <br>
+
             <label for="climate_metric">Climate Metric:</label>
             <select id="climate_metric" name="climate_metric">
                 <option value="avg_temp">Average Temperature</option>
                 <option value="rainfall">Rainfall</option>
                 <option value="wind_speed">Wind Speed</option>
             </select>
-            <br>
-            <br>
+
             <label for="start_period">Start Date (Period 1):</label>
             <input type="date" id="start_period" name="start_period">
-            <br>
-            <br>
+
             <label for="end_period">End Date (Period 1):</label>
             <input type="date" id="end_period" name="end_period">
-            <br>
-            <br>
+
             <label for="start_period_2">Start Date (Period 2):</label>
             <input type="date" id="start_period_2" name="start_period_2">
-            <br>
-            <br>
+
             <label for="end_period_2">End Date (Period 2):</label>
             <input type="date" id="end_period_2" name="end_period_2">
-            <br>
-            <br>
+
             <label for="num_results">Number of Similar Stations to Show:</label>
             <input type="number" id="num_results" name="num_results" value="2" min="1" max="10">
-            <br>
-            <br>
+
             <button type="submit">Find Similar Stations</button>
         </form>
+
+        <!-- Static sample result table for preview -->
+        <table>
+            <tr>
+                <th>Weather Station</th>
+                <th>Average Temp<br>(2005–2009)</th>
+                <th>Average Temp<br>(2010–2015)</th>
+                <th>% Change</th>
+                <th>Difference from<br>Melbourne Airport</th>
+            </tr>
+            <tr>
+                <td class="selected">Melbourne Airport</td>
+                <td>22.5 °C</td>
+                <td>22.7 °C</td>
+                <td>+0.88%</td>
+                <td>0.0% <span class="selected">(selected)</span></td>
+            </tr>
+            <tr>
+                <td>Ballarat</td>
+                <td>17.2 °C</td>
+                <td>17.6 °C</td>
+                <td>+0.23%</td>
+                <td>-0.65%</td>
+            </tr>
+            <tr>
+                <td>Bendigo</td>
+                <td>16.9 °C</td>
+                <td>17.0 °C</td>
+                <td>+0.59%</td>
+                <td>-0.29%</td>
+            </tr>
+        </table>
+
     </div>
 </body>
 </html>
