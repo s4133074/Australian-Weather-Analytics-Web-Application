@@ -8,110 +8,110 @@ def get_page_html(form_data):
 <head>
     <meta charset="UTF-8">
     <title>Weather Report Application</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: #f4f7fb;
-            color: #333;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to right, #c6e2ff, #f0f8ff);
-            padding: 20px 40px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        header h1 {
-            display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-        }
-        header h1 img {
-            height: 50px;
-            margin-right: 15px;
-        }
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: #0077cc;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            padding: 40px 60px;
-            flex-wrap: wrap;
-        }
-        .top-box {
-            margin: 30px 60px 10px 60px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
-        .top-box h2 {
-            margin-top: 0;
-            color: #2c3e50;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-        }
-        .box {
-            flex: 1;
-            background-color: #ffffff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            min-width: 300px;
-            transition: transform 0.2s ease-in-out;
-        }
-        .box:hover {
-            transform: translateY(-5px);
-        }
-        .table-container {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 15px;
-            border: 1px solid #e0e0e0;
-            font-size: 13px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px 12px;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-            position: sticky;
-            top: 0;
-        }
-        tr:nth-child(even) {
-            background-color: #fafafa;
-        }
-        ul {
-            padding-left: 18px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .image-box img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-    </style>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: #f4f7fb;
+        color: #333;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to right, #c6e2ff, #f0f8ff);
+        padding: 20px 40px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+    }
+    header h1 img {
+        height: 50px;
+        margin-right: 15px;
+    }
+    nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+    nav a:hover {
+        color: #0077cc;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 40px 60px;
+        flex-wrap: wrap;
+    }
+    .top-box {
+        margin: 30px 60px 10px 60px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    .top-box h2 {
+        margin-top: 0;
+        color: #2c3e50;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 5px;
+    }
+    .box {
+        flex: 1;
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        min-width: 300px;
+        transition: transform 0.2s ease-in-out;
+    }
+    .box:hover {
+        transform: translateY(-5px);
+    }
+    .table-container {
+        max-height: 300px;
+        overflow-y: auto;
+        margin-top: 15px;
+        border: 1px solid #e0e0e0;
+        font-size: 13px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+        position: sticky;
+        top: 0;
+    }
+    tr:nth-child(even) {
+        background-color: #fafafa;
+    }
+    ul {
+        padding-left: 18px;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+    .image-box img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+</style>
 </head>
 <body>
     <header>
@@ -136,7 +136,7 @@ def get_page_html(form_data):
 
     <div class="container">
         <div class="box">
-            <h2>Natural Language Description of Data Attributes</h2>
+            <h2>Description of Data Attributes:</h2>
             <div class="table-container">
                 <table>
                     <thead><tr><th>Field</th><th>Description</th></tr></thead>
@@ -155,7 +155,7 @@ def get_page_html(form_data):
             </div>
         </div>
         <div class="box">
-            <h2>Data Snapshot</h2>
+            <h2>Data Snapshot:</h2>
             <div class="image-box">
             </div>
             <ul>
