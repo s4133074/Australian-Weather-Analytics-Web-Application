@@ -237,7 +237,7 @@ def get_page_html(form_data):
     </header>
 
     <main class="main-content" style="padding: 20px 60px;">
-        <h1>Explore Climate Data by Weather Station</h1>
+        <h1>Focused view of Climate Change by Climate Metric:</h1>
         <form method="GET">
             <table>
                 <tr><td><label for="start_site_id">Start Station ID:</label></td><td><input type="number" id="start_site_id" name="start_site_id" step="1" required></td></tr>
@@ -251,7 +251,7 @@ def get_page_html(form_data):
                     <option value="Evaporation">Evaporation</option>
                     <option value="Sunshine">Sunshine</option>
                 </select></td></tr>
-                <tr><td colspan="2" style="text-align:center;"><button type="submit">Submit</button></td></tr>
+                <tr><td colspan="2" style="text-align:center;"><button type="submit">Search 🔍</button></td></tr>
             </table>
         </form>
 

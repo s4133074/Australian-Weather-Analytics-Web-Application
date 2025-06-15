@@ -221,7 +221,7 @@ def get_page_html(form_data):
     </header>
 
     <main class="main-content">
-        <h1>Find Climatic Weather Data</h1>
+        <h1>Focused view of climate change by Weather Station:</h1>
 
         <form method="GET">
             <table>
@@ -265,7 +265,7 @@ def get_page_html(form_data):
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align:center;">
-                        <button type="submit">Search</button>
+                        <button type="submit">Search 🔍</button>
                     </td>
                 </tr>
             </table>

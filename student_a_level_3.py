@@ -152,7 +152,7 @@ def get_page_html(form_data):
         else:
             results_html = "<p style='color: orange;'>Please fill in all the form fields to get results.</p>"
     else:
-        results_html = "<p>Submit the form above to see similar weather stations.</p>"
+        results_html = "<p> </p>"
 
     page_html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -280,7 +280,8 @@ def get_page_html(form_data):
             <a href="/page3b">Page 2C</a>
         </nav>
     </header>
-<h1> Weather Station Similarity Comparer:</h1>
+<h1> Weather Station Analyser:</h1>
+(To Identify weather station locations with similar change in metric percentages)
 <div class="container">
     <form id="similarStationsForm" method="get" action="/page3a">
         <label for="metric">Climate Metric:</label>
@@ -327,7 +328,7 @@ def get_page_html(form_data):
         <br>
         <br>        
 
-        <button type="submit">Search</button>
+        <button type="submit">Search 🔍</button>
     </form>
 
     <div id="results">

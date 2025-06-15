@@ -264,7 +264,7 @@ def get_page_html(form_data):
             <a href="/page3b">Page 2C</a>
         </nav>
     </header>
-<h1>Comparing Weather Data Based on Climatic Metric:</h1>
+<h1>Explore Climate Metrics Similarities:</h1>
 <div class="container">
     <form method="get" action="/page3b">
         <label>Reference Metric:</label>
@@ -301,7 +301,7 @@ def get_page_html(form_data):
         <br>
         <br>        
 
-        <button type="submit">Search</button>
+        <button type="submit">Search 🔍</button>
     </form>
 
     <div id="results">
