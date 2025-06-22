@@ -66,16 +66,21 @@ def get_page_html(form_data):
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         min-width: 300px;
         transition: transform 0.2s ease-in-out;
+        margin: 20px 60px;
     }
     .box:hover {
         transform: translateY(-5px);
     }
     .table-container {
-        max-height: 300px;
+        max-height: 250px;
         overflow-y: auto;
-        margin-top: 15px;
         border: 1px solid #e0e0e0;
         font-size: 13px;
+        margin-top: 10px;
+    }
+    .scrollable-box {
+        max-height: 350px;
+        overflow-y: auto;
     }
     table {
         width: 100%;
@@ -106,7 +111,6 @@ def get_page_html(form_data):
         margin-bottom: 15px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-
     """
 
     page_html = f"""<!DOCTYPE html>
@@ -116,7 +120,6 @@ def get_page_html(form_data):
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Database Web-App Demo</title>
     <style>{styles}</style>
-
 </head>
 <body>
     <header>
@@ -134,19 +137,17 @@ def get_page_html(form_data):
         </nav>
     </header>
 
-
     <div class="top-box">
         <h2>Social Challenges:</h2>
         <p>This website helps tackle social challenges by making weather and climate data easy to access and understand for everyone. It shows historical trends and changes in weather that can help people like planners, farmers, or community groups—spot risks such as floods, heatwaves, or droughts. The simple design, filters, and clear language make it easier for users with different backgrounds to use. By supporting fair access to information, the site helps communities prepare for and respond to climate-related problems more equally.</p>
     </div>
 
-    
-        <div class="top-box">
+    <div class="top-box">
         <h2>Usability:</h2>
         <p>This website can be used to explore and analyze climate and weather data across different regions and time periods in Australia. Users can filter the data by state, time range, climate variables (like rainfall or temperature). For example, an environmental scientist can view trends over the past decade, or a student can explore raw data for a school project. The site also provides background information, user personas, and team details, helping users understand its purpose and context. Overall, it supports informed decision-making in areas like planning, research, and sustainability.</p>
     </div>
-
     """
+
     # PERSONAS
     try:
         print("Fetching personas...")
@@ -154,8 +155,9 @@ def get_page_html(form_data):
         persona_results = pyhtml.get_results_from_query("database/climate.db", persona_query)
 
         page_html += """
-        <div class="box">
-            <h2>Target Personas</h2>
+        <div class="box scrollable-box">
+            <h2>Target Personas:</h2>
+            <div class="table-container">
             <table>
                 <thead>
                     <tr>
@@ -169,7 +171,7 @@ def get_page_html(form_data):
                 <tbody>
         """
         if persona_results:
-            for name, background,needs_goals,skills_experience,painpoints in persona_results:
+            for name, background, needs_goals, skills_experience, painpoints in persona_results:
                 page_html += f"""
                 <tr>
                     <td>{name}</td>
@@ -180,8 +182,8 @@ def get_page_html(form_data):
                 </tr>
                 """
         else:
-            page_html += "<tr><td colspan='4'>No personas found.</td></tr>"
-        page_html += "</tbody></table></div>"
+            page_html += "<tr><td colspan='5'>No personas found.</td></tr>"
+        page_html += "</tbody></table></div></div>"
     except Exception as e:
         print(f"Error fetching personas: {e}")
         page_html += f"<p style='color:red;'>Error loading personas: {e}</p>"
@@ -192,18 +194,22 @@ def get_page_html(form_data):
         team_query = "SELECT student_id, student_name FROM team_members;"
         team_results = pyhtml.get_results_from_query("database/climate.db", team_query)
 
-        page_html += "<div class='box'><h2>Team Members</h2><ul>"
+        page_html += """
+        <div class="box scrollable-box">
+            <h2>Team Members:</h2>
+            <div class="table-container">
+                <ul>
+        """
         if team_results:
             for student_id, student_name in team_results:
                 page_html += f"<li><strong>{student_name}</strong> – Student ID: {student_id}</li>\n"
         else:
             page_html += "<li>No team members found.</li>"
-        page_html += "</ul></div>"
+        page_html += "</ul></div></div>"
     except Exception as e:
         print(f"Error fetching team members: {e}")
         page_html += f"<p style='color:red;'>Error loading team members: {e}</p>"
 
-
-    # Close divs and return full page
-    page_html += "</div></div></body></html>"
+    # Close HTML
+    page_html += "</body></html>"
     return page_html
