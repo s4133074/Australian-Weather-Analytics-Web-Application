@@ -153,12 +153,12 @@ def get_page_html(form_data):
             margin-right: 15px;
         }}
         nav a {{
-            margin-left: 25px;
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.2s;
+            margin-left: 10px;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 1.0rem;
+        transition: color 0.2s;;
         }}
         nav a:hover {{
             color: #0077cc;
@@ -212,16 +212,18 @@ def get_page_html(form_data):
         </h1>
         <nav class="nav-bar">
             <a href="/">Home</a>
-            <a href="/page2a">Page 1B</a>
-            <a href="/page3a">Page 1C</a>
-            <a href="/page1b">Page 2A</a>
-            <a href="/page2b">Page 2B</a>
-            <a href="/page3b">Page 2C</a>
+            <a href="/page2a">Station Data</a>
+            <a href="/page3a">Similar Stations</a>
+            <a href="/page1b">Mission Page</a>
+            <a href="/page2b">Metric Data</a>
+            <a href="/page3b">Metric Similarites</a>
         </nav>
     </header>
 
     <main class="main-content">
-        <h1>Focused view of climate change by Weather Station:</h1>
+        <h1>Weather Station Data:</h1>
+        (Present climate metric based information about weather stationsfor user selected State)
+<div class="container">
 
         <form method="GET">
             <table>

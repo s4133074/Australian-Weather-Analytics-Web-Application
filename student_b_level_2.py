@@ -140,12 +140,12 @@ def get_page_html(form_data):
             margin-right: 15px;
         }}
         nav a {{
-            margin-left: 25px;
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.2s;
+            margin-left: 10px;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 1.0rem;
+        transition: color 0.2s;
         }}
         nav a:hover {{
             color: #0077cc;
@@ -228,22 +228,24 @@ def get_page_html(form_data):
         </h1>
         <nav>
             <a href="/">Home</a>
-            <a href="/page2a">Page 1B</a>
-            <a href="/page3a">Page 1C</a>
-            <a href="/page1b">Page 2A</a>
-            <a href="/page2b">Page 2B</a>
-            <a href="/page3b">Page 2C</a>
+            <a href="/page2a">Station Data</a>
+            <a href="/page3a">Similar Stations</a>
+            <a href="/page1b">Mission Page</a>
+            <a href="/page2b">Metric Data</a>
+            <a href="/page3b">Metric Similarities</a>
         </nav>
     </header>
 
     <main class="main-content" style="padding: 20px 60px;">
-        <h1>Focused view of Climate Change by Climate Metric:</h1>
+        <h1>Climate Metric Data:</h1>
+        (Present infromation about climate changes for specific climate metric measurement across all States)
+<div class="container">
         <form method="GET">
             <table>
                 <tr><td><label for="start_site_id">Start Station ID:</label></td><td><input type="number" id="start_site_id" name="start_site_id" step="1" required></td></tr>
                 <tr><td><label for="end_site_id">End Station ID:</label></td><td><input type="number" id="end_site_id" name="end_site_id" step="1" required></td></tr>
-                <tr><td><label for="start_date">Start Date (YYYY-MM-DD):</label></td><td><input type="text" id="start_date" name="start_date" required></td></tr>
-                <tr><td><label for="end_date">End Date (YYYY-MM-DD):</label></td><td><input type="text" id="end_date" name="end_date" required></td></tr>
+                <tr><td><label for="start_date">Start Date (YYYY-MM-DD):</label></td><td><input type="date" id="start_date" name="start_date" required></td></tr>
+                <tr><td><label for="end_date">End Date (YYYY-MM-DD):</label></td><td><input type="date" id="end_date" name="end_date" required></td></tr>
                 <tr><td><label for="metric">Climate Metric:</label></td><td><select id="metric" name="metric">
                     <option value="MaxTemp">Max Temperature</option>
                     <option value="MinTemp">Min Temperature</option>

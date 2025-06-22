@@ -185,15 +185,12 @@ def get_page_html(form_data):
             margin-right: 15px;
         }}
         nav a {{
-            margin-left: 25px;
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }}
-        nav a:hover {{
-            color: #0077cc;
+            margin-left: 10px;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 1.0rem;
+        transition: color 0.2s;
         }}
         .container {{
             display: flex;
@@ -273,14 +270,14 @@ def get_page_html(form_data):
         </h1>
         <nav class="nav-bar">
             <a href="/">Home</a>
-            <a href="/page2a">Page 1B</a>
-            <a href="/page3a">Page 1C</a>
-            <a href="/page1b">Page 2A</a>
-            <a href="/page2b">Page 2B</a>
-            <a href="/page3b">Page 2C</a>
+            <a href="/page2a">Station Data</a>
+            <a href="/page3a">Similar Stations</a>
+            <a href="/page1b">Mission Page</a>
+            <a href="/page2b">Metric Data</a>
+            <a href="/page3b">Metric Similarities</a>
         </nav>
     </header>
-<h1> Weather Station Analyser:</h1>
+<h1> Weather Station Similarities:</h1>
 (To Identify weather station locations with similar change in metric percentages)
 <div class="container">
     <form id="similarStationsForm" method="get" action="/page3a">
