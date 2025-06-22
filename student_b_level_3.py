@@ -329,7 +329,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
         else:
             super().do_GET()
 
-if __name__ == '__main__':
+if __name__ == '_main_':
     if not os.path.exists(DATABASE_DIR):
         os.makedirs(DATABASE_DIR)
     if not os.path.exists(DB_PATH):
@@ -353,6 +353,3 @@ if __name__ == '__main__':
     with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
         print(f"Serving on port {PORT}...")
         httpd.serve_forever()
-
-
-

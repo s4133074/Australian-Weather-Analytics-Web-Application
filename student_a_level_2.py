@@ -222,7 +222,7 @@ def get_page_html(form_data):
 
     <main class="main-content">
         <h1>Weather Station Data:</h1>
-        (Present climate metric based information about weather stationsfor user selected State)
+        (Present climate metric based information about weather stations for user selected State)
 <div class="container">
 
         <form method="GET">
@@ -283,5 +283,3 @@ def get_page_html(form_data):
 </html>
 """
     return page_html
-
-

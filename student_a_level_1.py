@@ -171,9 +171,3 @@ def get_page_html(form_data):
 </html>
 """
     return page_html
-
-
-
-
-
-
