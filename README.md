@@ -52,7 +52,7 @@ This project uses historical Australian weather station and climate data stored 
 2. Install Python 3.
 3. Ensure the SQLite database is located in the `database` folder.
 4. Run: python demo3.py
-5. Open your browser and visit: http://localhost
+5. Open localhost link on browser
 
 ## Skills Demonstrated
 
